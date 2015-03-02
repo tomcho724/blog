@@ -28,7 +28,7 @@ public class Post {
 	}
 	
 	public String toString(){
-		return "";
+		return (_date.toString() + "\n" + _content);
 	}
 	
 	public boolean equals(Object o){
@@ -43,7 +43,13 @@ public class Post {
 	}
 	
 	public boolean contains(String keyword){
-		
+		String[] temp = _content.split(" ");
+		for (int i=0; i<temp.length; i++){
+			if (temp[i].equals(keyword)){
+				return true;
+			}
+		}		
+		return false;
 	}
 
 }
