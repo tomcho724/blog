@@ -1,38 +1,55 @@
 package base;
 
-public class User {
-	private int _ID;
-	private String _name;
-	private String _email;
+import java.io.*;
+
+public class User implements Comparable<User>,Serializable {
+	private int ID;
+	private String name;
+	private String email;
 	
 	public User(int ID, String name, String email){
-		_ID = ID;
-		_name = name;
-		_email = email;
+		this.ID = ID;
+		this.name = name;
+		this.email = email;
 	}
 	
 	public void setID(int ID){
-		_ID = ID;
+		this.ID = ID;
 	}
 	
 	public int getID(){
-		return _ID;
+		return ID;
 	}
-	public void setname(String name){
-		_name = name;
+	public void setUserName(String name){
+		this.name = name;
 	}
 	
-	public String getname(){
-		return _name;
+	public String getUserName(){
+		return name;
 	}
 	
 	public void setemail(String email){
-		_email = email;
+		this.email = email;
 	}
 	
 	public String getemail(){
-		return _email;
+		return email;
 	}	
 	
+	public int compareTo(User u){
+		if (this.getID() > u.getID()){
+			return 1;
+			}
+		else if (this.getID() < u.getID()){
+			return -1;
+			}
+		else {
+			return 0;
+			}
+	}
+	
+	public String toString(){
+		return("User [userId=" + this.ID +", userName=" + this.name + ", userEmail=" + this.email + "]");
+	}
 
 }

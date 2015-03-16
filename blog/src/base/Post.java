@@ -1,8 +1,9 @@
 package base;
 
-import java.util.Date;
+import java.io.*;
+import java.util.*;
 
-public class Post {
+public class Post implements Comparable<Post>,Serializable{
 	private Date _date;
 	private String _content;
 	
@@ -38,8 +39,7 @@ public class Post {
 	}
 	
 	public int hashCode(){
-		int hashcode = 0;
-		return hashcode;
+		return (_date.hashCode() + _content.hashCode());
 	}
 	
 	public boolean contains(String keyword){
@@ -50,6 +50,10 @@ public class Post {
 			}
 		}		
 		return false;
+	}
+	
+	public int compareTo(Post p){
+		return(_date.compareTo(p._date));
 	}
 
 }

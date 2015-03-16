@@ -19,7 +19,7 @@ public class FriendsPost extends Post{
 	}
 	
 	public String toString(){
-		return ("User [userId=" + _user.getID() +", userName=" + _user.getname() + ", userEmail=" + _user.getemail() + "]\n" + super.getDate().toString() + "\n" + super.getContent());
+		return (_user.toString() + "\n" + super.getDate().toString() + "\n" + super.getContent());
 	}
 
 }
