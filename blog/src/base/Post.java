@@ -29,7 +29,7 @@ public class Post implements Comparable<Post>,Serializable{
 	}
 	
 	public String toString(){
-		return (_date.toString() + "\n" + _content);
+		return (_date.toString() + "\n" + _content + "\n");
 	}
 	
 	public boolean equals(Object o){
